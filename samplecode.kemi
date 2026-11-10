@@ -1,0 +1,14 @@
+mass sample_mass = 36 g;
+compound water = H2O;
+
+when (sample_mass > 20 g) {
+    show sample_mass;
+    show atoms(water);
+    show molar_mass(water);
+} otherwise {
+    show "Below threshold";
+}
+*# Multi-line
+   reaction check #*
+react water_form = H2 + O2 yield H2O;
+convert 500 mL to L into liquid_vol;
