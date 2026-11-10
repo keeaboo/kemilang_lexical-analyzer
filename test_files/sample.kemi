@@ -1,0 +1,7 @@
+calc
+mass = 36 g;
+vol = 2.5 mL;
+
+show "Water sample"
+
+react 2H2 + O2 yield H2O
