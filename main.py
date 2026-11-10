@@ -7,4 +7,4 @@ sample_code = "calc"
 
 tokens = lexer.tokenize(sample_code)
 
-print("Tokens:", tokens)
+print(f"Lexeme: {sample_code} \t Token: {tokens}")
