@@ -59,15 +59,18 @@ def get_typed_input() -> str:
             
     return "\n".join(lines)
 
+VALID_EXTENSIONS = ('.kemi', '.txt')  # Acceptable file extensions
 
 def get_file_input() -> str:
-    """Prompts for a file path and reads its content."""
+    """Prompts for a file path, validates extension, and reads its content."""
     print("\n--- Load KemiLang Code File ---")
-    file_path = input("Enter file path (e.g., test.txt or script.kemi): ").strip()
-    
-    # Remove quotes if user drag-and-dropped the file path
-    file_path = file_path.strip("'\"")
+    file_path = input("Enter file path (e.g., script.kemi): ").strip().strip("'\"")
 
+    # Extension Validation
+    if not file_path.endswith(VALID_EXTENSIONS):
+        print(f"\n[Error] Invalid extension. KemiLang files must end with {VALID_EXTENSIONS}")
+        return ""
+    
     if not os.path.exists(file_path):
         print(f"\n[Error] File '{file_path}' not found.")
         return ""
