@@ -1,7 +1,3 @@
-"""
-Hand-written Lexical Analyzer (Scanner / State Machine) for KemiLang.
-"""
-
 from tokens import Token, TokenType, KEMILANG_KEYWORDS, KEMILANG_RESERVED, KEMILANG_BOOLEANS
 
 class Lexer:
